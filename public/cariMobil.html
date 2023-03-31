@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style.css  " />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar bg-main navbar-expand-lg">
+      <div class="container">
+        <a href="#" class="navbar-brand fw-bold text-primary">Alex Muhammad</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+          <span class="navbar-toggler-icon border-0 bg-transparent"></span>
+        </button>
+        <div class="offcanvas offcanvas-end w-75" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">BCR</h5>
+            <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body navbar-collapse">
+            <ul class="navbar-nav ms-auto fs-6 gap-4 fw-medium">
+              <li class="nav-item">
+                <a href="#our-services" class="nav-link text-dark">Our Services</a>
+              </li>
+              <li class="nav-item">
+                <a href="#why-us" class="nav-link text-dark">Why Us</a>
+              </li>
+              <li class="nav-item">
+                <a href="#testimonial" class="nav-link text-dark">Testimonial</a>
+              </li>
+              <li class="nav-item">
+                <a href="#faq" class="nav-link text-dark">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link btn btn-bcr text-light">Register</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="hero">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-6 hero-description my-auto">
+            <h1>Sewa & Rental Mobil Terbaik di kawasan (Lokasimu)</h1>
+            <p>Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.</p>
+          </div>
+          <div class="col-6 hero-image">
+            <img src="./images/car.png" alt="" class="img-fluid position-absolute end-0 z-0" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="w-100 position-input position-relative">
+      <div class="container w-75 p-4 bg-white rounded-2 shadow-sm">
+        <div class="row">
+          <div class="col">
+            <label for="driver">Tipe Data Driver</label>
+            <div class="input-group mb-3 border-custom input-color mt-1">
+              <select class="form-select" id="inputDriver">
+                <option hidden>Pilih Tipe Driver</option>
+                <option value="Dengan Supir">Dengan Supir</option>
+                <option value="Tanpa Supir (Lepas Kunci)">Tanpa Supir (Lepas Kunci)</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <label for="date">Tanggal</label>
+            <input type="date" class="form-control mb-3 mt-1" id="inputDate" />
+          </div>
+          <div class="col">
+            <label for="date">Waktu Jemput/Ambil</label>
+            <input type="text" class="form-control mb-3 mt-1" id="inputTime" />
+          </div>
+          <div class="col">
+            <label for="jumlah-penumpang">Penumpang</label>
+            <input type="text" name="jumlah-penumpang" class="form-control mb-3 mt-1" id="inputCapacity" placeholder="Jumlah Penumpang" />
+          </div>
+          <div class="col-2 my-auto">
+            <button class="btn w-100 btn-bcr text-white margin__top-btn-input" id="searchBtn"> Cari Mobil </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mt-5">
+      <div class="container w-75">
+        <div class="row g-4" id="cars-container"></div>
+      </div>
+    </section>
+    <section class="hero-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <p>Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</p>
+            <p>binarcarrental@gmail.com</p>
+            <p>081-233-334-808</p>
+          </div>
+          <div class="col-sm-3">
+            <ul class="lh-lg p-0 fw-bold">
+              <li class="list-group-item">Our services</li>
+              <li class="list-group-item">Why Us</li>
+              <li class="list-group-item">Testimonial</li>
+              <li class="list-group-item">FAQ</li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <p>Conntect with us</p>
+            <div class="d-flex gap-3 icon-footer">
+              <img src="./images/icon_facebook.svg" alt="" />
+              <img src="./images/icon_instagram.svg" alt="" />
+              <img src="./images/icon_twitter.svg" alt="" />
+              <img src="./images/icon_mail.svg" alt="" />
+              <img src="./images/icon_twitch.svg" alt="" />
+            </div>
+          </div>
+          <div class="col-sm-2 mt-2 copy-right">
+            <p>Copyright Binar 2023</p>
+            <h6 class="p-2 text-white rounded-2" style="background-color: #0d28a6">@alexmuhammad__</h6>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript" src="./scripts/binar.js"></script>
+    <script type="text/javascript" src="./scripts/app.example.js"></script>
+    <script type="text/javascript" src="./scripts/car.example.js"></script>
+    <script type="text/javascript" src="./scripts/main.example.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

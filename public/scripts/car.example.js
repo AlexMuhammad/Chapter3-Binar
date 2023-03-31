@@ -5,23 +5,7 @@ class Car {
     this.list = cars.map((i) => new this(i));
   }
 
-  constructor({
-    id,
-    plate,
-    manufacture,
-    model,
-    image,
-    rentPerDay,
-    capacity,
-    description,
-    transmission,
-    available,
-    type,
-    year,
-    options,
-    specs,
-    availableAt,
-  }) {
+  constructor({ id, plate, manufacture, model, image, rentPerDay, capacity, description, transmission, available, type, year, options, specs, availableAt }) {
     this.id = id;
     this.plate = plate;
     this.manufacture = manufacture;
@@ -41,13 +25,26 @@ class Car {
 
   render() {
     return `
-      <p>id: <b>${this.id}</b></p>
-      <p>plate: <b>${this.plate}</b></p>
-      <p>manufacture: <b>${this.manufacture}</b></p>
-      <p>model: <b>${this.model}</b></p>
-      <p>capacity: <b>${this.capacity}</b></p>
-      <p>available at: <b>${this.availableAt}</b></p>
-      <img src="${this.image}" alt="${this.manufacture}" width="64px">
+    <div class="card">
+      <img src="${this.image}" class="card-img-top mx-auto my-4" style="width:300px; height:200px" alt="${this.manufacture}>
+      <div class="card-body">
+        <p class="card-text fw-semibold px-4">${this.type}</p>
+        <h6 class="card-title fw-bold px-4">Rp ${this.rentPerDay} / hari</h6>
+        <p class="card-text px-4 py-2">${this.description}</p>
+        <div class="d-flex gap-2 px-4">
+          <img src="../images/people.svg" style="width:24px; height:24px"/>
+          <p>${this.capacity} Orang</p>
+        </div>
+        <div class="d-flex gap-2 px-4">
+          <img src="../images/gear.svg" style="width:24px; height:24px"/>
+          <p>${this.transmission}</p>
+        </div>
+        <div class="d-flex gap-2 px-4">
+          <img src="../images/calendar.svg" style="width:24px; height:24px"/>
+          <p>Tahun ${this.year}</p>
+        </div>
+      </div>
+    </div>
     `;
   }
 }
